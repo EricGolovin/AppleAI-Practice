@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17132" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Yem-Ke-RMA">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17105"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Face Detection-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="FaceDetection_UIKit" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.2" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Wgf-fh-l0l">
+                                <rect key="frame" x="20" y="109.5" width="374" height="371.5"/>
+                                <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Wgf-fh-l0l" secondAttribute="height" id="BJq-CU-vQj"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lcU-UU-QXI">
+                                <rect key="frame" x="20" y="715.5" width="374" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="X5x-Az-Hq2"/>
+                                </constraints>
+                                <state key="normal" title="Detect Faces"/>
+                                <connections>
+                                    <action selector="detectFacesTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UGu-9i-4h5"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of Faces" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VXV-s8-Icc">
+                                <rect key="frame" x="20" y="632" width="374" height="33.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="lcU-UU-QXI" secondAttribute="trailing" constant="20" id="1FV-CA-z3I"/>
+                            <constraint firstItem="lcU-UU-QXI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="2jW-ad-NHY"/>
+                            <constraint firstItem="lcU-UU-QXI" firstAttribute="top" secondItem="VXV-s8-Icc" secondAttribute="bottom" constant="50" id="4Pq-Fe-F1a"/>
+                            <constraint firstItem="Wgf-fh-l0l" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="AqH-ji-LZS"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Wgf-fh-l0l" secondAttribute="trailing" constant="20" id="Ihj-du-p5x"/>
+                            <constraint firstItem="VXV-s8-Icc" firstAttribute="top" secondItem="Wgf-fh-l0l" secondAttribute="bottom" constant="150" id="KDz-kW-2b3"/>
+                            <constraint firstItem="Wgf-fh-l0l" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="SBJ-vw-FJ4"/>
+                            <constraint firstItem="VXV-s8-Icc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="WK5-Da-gfv"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="VXV-s8-Icc" secondAttribute="trailing" constant="20" id="i04-d7-PGI"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Face Detection" id="8bv-vE-FfS">
+                        <barButtonItem key="leftBarButtonItem" title="Library" image="photo.on.rectangle" catalog="system" id="Aao-A3-lBt">
+                            <connections>
+                                <action selector="libraryBarTapped:" destination="BYZ-38-t0r" id="jup-vn-y9X"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Camera" image="camera.fill" catalog="system" id="cvR-oS-C4X"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="cameraBarButton" destination="cvR-oS-C4X" id="f9C-jK-3UF"/>
+                        <outlet property="detectFacesButton" destination="lcU-UU-QXI" id="iO7-FO-qJU"/>
+                        <outlet property="libraryBarButton" destination="Aao-A3-lBt" id="hhN-SJ-ZpW"/>
+                        <outlet property="numberOfFacesLabel" destination="VXV-s8-Icc" id="knC-k8-jFb"/>
+                        <outlet property="photoImageView" destination="Wgf-fh-l0l" id="rAs-8u-Zfv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1047.8260869565217" y="137.94642857142856"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="evw-sW-zh1">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Yem-Ke-RMA" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gB9-uD-SPd">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="vgZ-24-fkz"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="juK-Tp-Uoq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="camera.fill" catalog="system" width="128" height="94"/>
+        <image name="person.2" catalog="system" width="128" height="81"/>
+        <image name="photo.on.rectangle" catalog="system" width="128" height="96"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
